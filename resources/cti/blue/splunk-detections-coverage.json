@@ -1,0 +1,150 @@
+{
+    "version": "4.5",
+    "name": "Splunk Detections",
+    "domain": "enterprise-attack",
+    "techniques": [
+        {
+            "techniqueID": "T1003",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1003.001",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1003.002",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1003.004",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1003.006",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1027",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1036.003",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1059.001",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1062.001",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1069.001",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1069.002",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1070",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1078",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1082",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1087.001",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1087.002",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1098",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1105",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1197",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1482",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1490",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1558",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1562.001",
+            "comment": "",
+            "score": 1
+        }
+,
+        {
+            "techniqueID": "T1567.002",
+            "comment": "",
+            "score": 1
+        }
+    ]
+}

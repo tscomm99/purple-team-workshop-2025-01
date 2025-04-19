@@ -1,0 +1,72 @@
+{
+  "version": "4.5",
+  "name": "Splunk Detections Triggered",
+  "domain": "enterprise-attack",
+  "techniques": [
+    {
+      "techniqueID": "T1048",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1059.001",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1069.001",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1069.002",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1070",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1087.001",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1087.002",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1098",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1105",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1482",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1490",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1562.001",
+      "comment": "",
+      "score": 1
+    },
+    {
+      "techniqueID": "T1567.002",
+      "comment": "",
+      "score": 1
+    }
+  ]
+}
