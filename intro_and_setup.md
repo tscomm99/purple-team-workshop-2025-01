@@ -1,5 +1,4 @@
 # Intro to the Workshop
-- This is the first performance of this all for us :cold_sweat:
 - It is a full knowledge / whitebox exercise
 - Aim is to demonstrate the workflow of a threat informed purple team exercise from CTI to red to blue to identifying improvements
 - The workshop will start with setting the context with CTI, then we'll have three blocks of emulation, verification and table top and we'll finish with the findings of the exercise
@@ -51,7 +50,7 @@
 - Splunk can be used by all participants concurrently
 
 ### Access Workshop Documentation
-- Open the link to the [workshop repository](https://github.com/tscomm99/purple-team-workshop-2024)
+- Open the link to the [workshop repository](https://github.com/tscomm99/purple-team-workshop-2025-01)
 - Log in if you are not already
 - You will be using the material in the repo throughout the workshop so please keep it open
 

