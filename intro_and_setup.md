@@ -20,7 +20,7 @@
 ### Internet Connection
 - Who is using his own mobile phone tethering to connect to the Internet?
   - Please copy your IP from https://www.whatsmyip.org
-  - And fill it along with your (first) name in the corresponding field in this [Google sheet](https://docs.google.com/spreadsheets/d/1Mq08oPex0Z1XPtCl6rPqtSVbonF_1UozHA_6ncfj4zs/edit?usp=share_link)
+  - And fill it along with your (first) name in the corresponding field in this [Google sheet](https://docs.google.com/spreadsheets/d/19Qvg4-iVPGrZ5CDWJv2WlZH05fmtjPEwtrhv6maUOro/edit?usp=drive_link)
 - If you are connecting via the guest WLAN please connect now, the details can be found on the table info page
 
 ### Google Meeting
@@ -55,7 +55,7 @@
 - You will be using the material in the repo throughout the workshop so please keep it open
 
 ### Access Workshop Google Share
-- Open the link to [Google Drive](https://drive.google.com/drive/folders/1dsrycoWPXzC-JB-ZamZ7EHxlOU5Fvq_J?usp=sharing)
+- Open the link to [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
 - Log in if you are not already
 - Navigate to the sub folder of your table
 - You will be using the material in the drive throughout the workshop so please keep it open
