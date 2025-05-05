@@ -65,8 +65,8 @@ According to https://www.attackiq.com/glossary/pyramid-of-pain/
 
 ### Making it Actionable
 - Extract TTPs incl. necessary details/context
-- Compile different [ATT&CK Navigator layers](resources/cti/red)
 - Create an [adversary profile](resources/adversaryprofile-template.md) to document the actor and the CTI/blue/red "table top"
+- Compile different [ATT&CK Navigator layers](resources/cti/red)
 - Note: Depending on the goals of the exercise (e.g. emulate several different C2 channels) a diffenrent form of documentation may be chosen
 
 ### Analyse and Define what to Cover
