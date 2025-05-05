@@ -19,7 +19,7 @@ sure you record them as well for the discussion.
   - Open the [detection reference](resources/detection-reference.md)
   - Open the [emulation reference](resources/emulation-reference.md)
 - Prepare the documentation for the verification
-  - Navigate to your table's subdirectory on [Google Drive](https://drive.google.com/drive/folders/1dsrycoWPXzC-JB-ZamZ7EHxlOU5Fvq_J?usp=sharing)
+  - Navigate to your table's subdirectory on [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
   - Create an new text document
   - Copy the visible contents (not the raw markdown) of the [emulation reference](resources/emulation-reference.md) and paste them into the new text document
   - You can copy all parts into one document or create one document per emulation part
