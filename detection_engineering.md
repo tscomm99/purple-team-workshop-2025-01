@@ -26,15 +26,14 @@ Rules triggered by elements under attacker control are likely to have a shorter 
 Exploit developers think in terms of "primitives" e.g. [the write what where CWE](https://cwe.mitre.org/data/definitions/123.html) . In many environments, the use of certutil.exe is supposed to be rare. It is a so-called LOLBIN - Living Off the Land Binary, part of the bigger [LOLBAS (Applications and Scripts) family](https://lolbas-project.github.io/). Certutil's value lies in the fact that is signed by Microsoft and already installed. This offers one less "feature" or "capability" that the authors need to develop and embed in their toolkit to achieve their objectives. Detection opportunities for LOLBAS are multiple, and can yield some false positives as well as strong signals when the environment is known. 
 
 # What can we do about it?
-Many approaches can help to refine the detection, but boil down to three angles:
+Three main approaches can help to refine the detection's performance:
 - improve the detection logic
 - allowlist known-good events (baseline - True Positive Benign)
 - correlate events (eliminate false positives)
 
-
 However, just because you could doesn't mean you should. This incurrs additional effort and you should apply this approach strategically for high value detection use cases. In some cases, a complementary deception strategy focused around relevant TTPs will be the cheapest way forward.
 
-In the workshop, we have encountered false negatives as specific detection rules (3, 21, 23) were not triggered by the operator. However, a lot of events were collected and match a simple string. We should consider many broader, potentially overlapping detections, acting as failover for rules which are be too specific. 
+In the workshop, we have encountered false negatives as specific detection rules (3, 21, 23) were not triggered by the operator. This means our _recall_ was insufficient overall. The rules were too precise. However, a lot of events were collected and match a simple string. We should consider many broader (more _recall_), potentially overlapping detections, acting as failover for rules which are too specific or _precise_. 
 
 ## How do we get started
 ### Good old strings
