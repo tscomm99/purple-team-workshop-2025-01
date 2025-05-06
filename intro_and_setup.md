@@ -27,12 +27,19 @@
 ### Open the Workshop Repo on Github
 - Please open the URL https://github.com/tscomm99/purple-team-workshop-2025-01
 - Navigate to Introduction and Setup (or open intro_and_setup.md)
+- Log in if you are not already
+- You will be using the material in the repo throughout the workshop so please keep it open
 
 ### Internet Connection
 - Who is using his own mobile phone tethering to connect to the Internet?
   - Please copy your IP from https://www.whatsmyip.org
   - And fill it along with your (first) name in the corresponding field in this [Google sheet](https://docs.google.com/spreadsheets/d/19Qvg4-iVPGrZ5CDWJv2WlZH05fmtjPEwtrhv6maUOro/edit?usp=drive_link)
 - If you are connecting via the guest WLAN please connect now, the details can be found on the table info page
+
+### Access Workshop Google Share
+- Open the link to [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
+- Log in if you are not already
+- Navigate to the sub folder of your table
 
 ### Access Guacamole
 - Open the link to Guacamole and log in using the information provided by the workshop team
@@ -57,18 +64,8 @@
 - As a second alternative you can also use https://yopad.eu to transfer the commands between your computer and the lab VMs
 
 ### Access Splunk
-- Open the link to Splunk and log in, the details can be found on the table info page
+- Open the link to Splunk and log in using the information provided by the workshop team
 - Splunk can be used by all participants concurrently
-
-### Access Workshop Documentation
-- Open the link to the [workshop repository](https://github.com/tscomm99/purple-team-workshop-2025-01)
-- Log in if you are not already
-- You will be using the material in the repo throughout the workshop so please keep it open
-
-### Access Workshop Google Share
-- Open the link to [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
-- Log in if you are not already
-- Navigate to the sub folder of your table
 - You will be using the material in the drive throughout the workshop so please keep it open
 
 ### Detailed Intro from each Workshop Track
