@@ -1,4 +1,6 @@
-Going back to the basics, a simple keyword can be added to a lookup, for searching or handling exceptions
+As we've seen, sometimes detections go missing. Looking into Splunk, running a simple search `index=win mimikatz` reveals many events missed. 
+
+Going back to the basics, a simple keyword can be added to a lookup, for future searches
 ```
 | makeresults 
 | eval searchterm="mimikatz" 
@@ -7,26 +9,31 @@ Going back to the basics, a simple keyword can be added to a lookup, for searchi
 | fields - _time
 | outputlookup append=true hackingtools.csv
 ```
+Or when handling exceptions such as true positive benigns, or false positives.
 ```
 | makeresults 
-| eval searchterm="goodguyhacker" 
+| eval searchterm="knowngoodhacker" 
 | eval insert_datetime=strftime(_time,"%Y-%m-%dT%H:%M:%S") 
 | eval operator = "blueteam1" 
 | fields - _time
 | outputlookup append=true allowlisted_hacking_events.csv
 ```
 
-Use one or more lookups to feed your query against relevant data sources while silencing others
+Splunk lets you use one or more lookups to feed your query against relevant data sources while silencing others, expanding in "OR" statements
 ```
 index=win [|inputlookup hackingtools.csv | fields searchterm | rename searchterm AS query] 
 | search NOT [|inputlookup allowlisted_hacking_events.csv | fields searchterm | rename searchterm AS query]
 ```
 
 Events from multiple data sources or tools may need to be normalized for simpler correlation (e.g. user, usr, User, src_usr) without relying on Splunk "schema on the fly" (REF CIM Splunk).
-Finally, you can use the collect command to send data to a different index for safekeeping and correlation
+When relying on correlation, you can create select summary indexes: Navigate to Settings, Data, Indexes, and find the `New index` button. Enter the name "notables_endpoint_hackingtool" if you would like to follow along.
+
+Finally, you can leverage the collect command to send data to a your summary index for safekeeping and/or correlation
 ```
-index IN (win,sysmon,edr1,edr2) [|inputlookup hackingtools.csv | fields searchterm | rename searchterm AS query] | 
-| <normalize> 
+index IN (win,sysmon,edr1,edr2) [|inputlookup hackingtools.csv | fields searchterm | rename searchterm AS query] 
+| search NOT [|inputlookup allowlisted_hacking_events.csv | fields searchterm | rename searchterm AS query] 
+| eval score=10
+| table _time, host, _raw, score
 | collect index=notables_endpoint_hackingtool
 ```
 
