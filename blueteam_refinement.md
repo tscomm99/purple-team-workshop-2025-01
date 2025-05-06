@@ -33,10 +33,17 @@ Finally, you can leverage the collect command to send data to a your summary ind
 index IN (win,sysmon,edr1,edr2) [|inputlookup hackingtools.csv | fields searchterm | rename searchterm AS query] 
 | search NOT [|inputlookup allowlisted_hacking_events.csv | fields searchterm | rename searchterm AS query] 
 | eval score=10
-| table _time, host, _raw, score
+| eval EventCategory="EndpointHackingKeyword"
+| rename _raw AS raw
+| table _time, raw, score, EventCategory, host
 | collect index=notables_endpoint_hackingtool
 ```
-
+Once in place, a simple correlation search becomes "easy"
+```
+index="notables_endpoint_hackingtool" 
+| stats count AS CountNotable, sum(score) AS Score, dc(EventCategory) AS CountCategories by orig_host
+| where count > 2 OR Score > 20 OR CountCategories > 2
+```
 
 The CIM helps you to normalize your data to match a common standard, using the same field names and event tags for equivalent events from different sources or vendors. 
 The CIM acts as a search-time schema ("schema-on-the-fly") to allow you to define relationships in the event data while leaving the raw machine data intact.
