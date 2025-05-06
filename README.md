@@ -1,5 +1,5 @@
 # Purple Team Workshop
-Content for the attendees of the purple team workshop run in 2024.
+Content for the attendees of the purple team workshop run in 2025.
 
 
 ![Cyber security resources](images/purpleteaming.jpg "Cyber security resources")

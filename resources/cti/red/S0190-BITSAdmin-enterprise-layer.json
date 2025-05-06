@@ -1,123 +1,120 @@
 {
-	"name": "BITSAdmin (S0190)",
-	"versions": {
-		"attack": "16",
-		"navigator": "5.1.0",
-		"layer": "4.5"
-	},
-	"domain": "enterprise-attack",
-	"description": "Enterprise techniques used by BITSAdmin, ATT&CK software S0190 (v1.4)",
-	"filters": {
-		"platforms": [
-			"Windows",
-			"Linux",
-			"macOS",
-			"Network",
-			"PRE",
-			"Containers",
-			"IaaS",
-			"SaaS",
-			"Office Suite",
-			"Identity Provider"
-		]
-	},
-	"sorting": 0,
-	"layout": {
-		"layout": "side",
-		"aggregateFunction": "average",
-		"showID": false,
-		"showName": true,
-		"showAggregateScores": false,
-		"countUnscored": false,
-		"expandedSubtechniques": "annotated"
-	},
-	"hideDisabled": false,
-	"techniques": [
-		{
-			"techniqueID": "T1197",
-			"tactic": "defense-evasion",
-			"score": 1,
-			"color": "#66b1ff",
-			"comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to launch a malicious process.(Citation: TrendMicro Tropic Trooper Mar 2018)",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1197",
-			"tactic": "persistence",
-			"score": 1,
-			"color": "#66b1ff",
-			"comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to launch a malicious process.(Citation: TrendMicro Tropic Trooper Mar 2018)",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1048",
-			"tactic": "exfiltration",
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": true
-		},
-		{
-			"techniqueID": "T1048.003",
-			"tactic": "exfiltration",
-			"score": 1,
-			"color": "#66b1ff",
-			"comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to upload files from a compromised host.(Citation: Microsoft BITSAdmin)",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1105",
-			"tactic": "command-and-control",
-			"score": 1,
-			"color": "#66b1ff",
-			"comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to upload and/or download files.(Citation: Microsoft BITSAdmin)",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1570",
-			"tactic": "lateral-movement",
-			"score": 1,
-			"color": "#66b1ff",
-			"comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to upload and/or download files from SMB file servers.(Citation: Microsoft About BITS)",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		}
-	],
-	"gradient": {
-		"colors": [
-			"#ffffffff",
-			"#66b1ffff"
-		],
-		"minValue": 0,
-		"maxValue": 1
-	},
-	"legendItems": [
-		{
-			"color": "#66b1ff",
-			"label": "used by BITSAdmin"
-		}
-	],
-	"metadata": [],
-	"links": [],
-	"showTacticRowBackground": false,
-	"tacticRowBackground": "#dddddd",
-	"selectTechniquesAcrossTactics": true,
-	"selectSubtechniquesWithParent": false,
-	"selectVisibleTechniques": false
+  "name": "BITSAdmin (S0190)",
+  "versions": {
+    "attack": "17",
+    "navigator": "5.1.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Enterprise techniques used by BITSAdmin, ATT&CK software S0190 (v1.4)",
+  "filters": {
+    "platforms": [
+      "Windows",
+      "Linux",
+      "macOS",
+      "Network",
+      "PRE",
+      "Containers",
+      "IaaS",
+      "SaaS",
+      "Office Suite",
+      "Identity Provider"
+    ]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": false,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "annotated"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1197",
+      "tactic": "defense-evasion",
+      "score": 1,
+      "color": "#66b1ff",
+      "comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to launch a malicious process.(Citation: TrendMicro Tropic Trooper Mar 2018)",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1197",
+      "tactic": "persistence",
+      "score": 1,
+      "color": "#66b1ff",
+      "comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to launch a malicious process.(Citation: TrendMicro Tropic Trooper Mar 2018)",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1048",
+      "tactic": "exfiltration",
+      "color": "",
+      "comment": "",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1048.003",
+      "tactic": "exfiltration",
+      "score": 1,
+      "color": "#66b1ff",
+      "comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to upload files from a compromised host.(Citation: Microsoft BITSAdmin)",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1105",
+      "tactic": "command-and-control",
+      "score": 1,
+      "color": "#66b1ff",
+      "comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to upload and/or download files.(Citation: Microsoft BITSAdmin)",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1570",
+      "tactic": "lateral-movement",
+      "score": 1,
+      "color": "#66b1ff",
+      "comment": "[BITSAdmin](https://attack.mitre.org/software/S0190) can be used to create [BITS Jobs](https://attack.mitre.org/techniques/T1197) to upload and/or download files from SMB file servers.(Citation: Microsoft About BITS)",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    }
+  ],
+  "gradient": {
+    "colors": ["#ffffffff", "#66b1ffff"],
+    "minValue": 0,
+    "maxValue": 1
+  },
+  "legendItems": [
+    {
+      "color": "#66b1ff",
+      "label": "used by BITSAdmin"
+    }
+  ],
+  "metadata": [],
+  "links": [],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": false,
+  "selectVisibleTechniques": false
 }

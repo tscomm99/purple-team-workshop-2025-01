@@ -5,9 +5,9 @@ exercises you will also have much more findings on preventive controls and also 
 controls and emulation actions during planning as well as execution.
 
 But you may still come across some general findings on preventions. So please take a note of them wile you go through the exercise
-so we can discuss them in the findings section at the end of the workshop.
+so we can discuss them at the end of this workshop section.
 
-As for high-level preventive findings you'll probably also have such opservations regarding the detective controls. Please make
+As for high-level preventive findings you'll probably also have such observations regarding the detective controls. Please make
 sure you record them as well for the discussion.
 
 ## Introduction and Preparation
@@ -19,7 +19,7 @@ sure you record them as well for the discussion.
   - Open the [detection reference](resources/detection-reference.md)
   - Open the [emulation reference](resources/emulation-reference.md)
 - Prepare the documentation for the verification
-  - Navigate to your table's subdirectory on [Google Drive](https://drive.google.com/drive/folders/1dsrycoWPXzC-JB-ZamZ7EHxlOU5Fvq_J?usp=sharing)
+  - Navigate to your table's subdirectory on [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
   - Create an new text document
   - Copy the visible contents (not the raw markdown) of the [emulation reference](resources/emulation-reference.md) and paste them into the new text document
   - You can copy all parts into one document or create one document per emulation part
@@ -34,7 +34,7 @@ sure you record them as well for the discussion.
   - In the pop-up remove the "Risk ..." and add "Annotations"
   - Click `Apply`
 - To keep better overview we recommend to use new tabs for links in the Splunk UI
-- To distinguish new from previous notables you can assign the reviewed ones the status "Closed" or "Part <n>" to map them to the corresponding part of the emulation
+- To distinguish new from previous notables you can assign the reviewed ones the status "Closed" or "Part ..." to map them to the corresponding part of the emulation
   - In `Incident Review` filter the notables if necessary
   - Select the ones you want to close, click `Edit Selected` and change `Status` to e.g. `Closed` in the `Edit Events` pop-up
   - Now you can filter the closed by clicking on the column header `Status` and de-select `Closed` from the statuses to be displayed
