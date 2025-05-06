@@ -34,7 +34,7 @@ sure you record them as well for the discussion.
   - In the pop-up remove the "Risk ..." and add "Annotations"
   - Click `Apply`
 - To keep better overview we recommend to use new tabs for links in the Splunk UI
-- To distinguish new from previous notables you can assign the reviewed ones the status "Closed" or "Part <n>" to map them to the corresponding part of the emulation
+- To distinguish new from previous notables you can assign the reviewed ones the status "Closed" or "Part ..." to map them to the corresponding part of the emulation
   - In `Incident Review` filter the notables if necessary
   - Select the ones you want to close, click `Edit Selected` and change `Status` to e.g. `Closed` in the `Edit Events` pop-up
   - Now you can filter the closed by clicking on the column header `Status` and de-select `Closed` from the statuses to be displayed
