@@ -66,10 +66,14 @@ As a process is emitting a login with the SecLogon Login mechanism, a 4624 event
 ```index=win  4624 TargetUserName!=TargetOutboundUserName TargetOutboundUserName!="-" ```
 
 ### Embrace True Positive Benign and False positives
-According to statistics definition, Precision measures the accuracy of positive predictions, while recall measures the ability of the model to find all relevant instances. 
-In our case, this means that we need to find the balance between detections that may be too specific and occur false negatives, and detections that may be too broad and cause attrition issues. Reducing the cost of handling a false positive alert is key to make sure your team doesn't burn out. Each detection should have guidance on how to be triaged to avoid paralysis analysis.
+Reducing the cost of handling a false positive alert is key to make sure your team doesn't burn out. Each detection should have guidance on how to be triaged to avoid paralysis analysis.
 
-The triage differenciation is the hard work you need to perform, luckily only once, as you establish the detection. It is where correlation kicks in often required to run multiple queries in parallel - ideally as a "playbook" - when reviewing events with low fidelity, effectively treating them as triggers rather than a final product. 
+According to statistics definition, _Precision_ measures the accuracy of positive predictions, while _recall_ measures the ability of the model to find all relevant instances. 
+In our case, this means that we need to find the balance between detections that may be too specific and occur false negatives, and detections that may be too broad and cause attrition issues. 
+
+`False Positives will happen and should not be seen as a big deal.`
+
+The triage differenciation is the hard work you need to perform, luckily only once, as you establish the detection. It is where correlation kicks in, as it is often required to run multiple queries in parallel - ideally as a "playbook" - when reviewing events with low fidelity, effectively treating them as triggers rather than a final product. A single event should not be enough to create an incident, but a series of small signals should.
 
 ### Modernize (if needed) the way you search your data
 Over time, you will likely notice the need to automatically enrich low fidelity events (e.g. perform a simple IP / Hostname PTR DNS lookup) in order to silence events. In effect, this post processing takes events out of [the funnel of fidelity](https://posts.specterops.io/introducing-the-funnel-of-fidelity-b1bb59b04036?gi=7043a4a42b18).
