@@ -1,7 +1,7 @@
 {
   "name": "Techniques-CISA",
   "versions": {
-    "attack": "16",
+    "attack": "17",
     "navigator": "5.1.0",
     "layer": "4.5"
   },
@@ -34,6 +34,28 @@
   "hideDisabled": false,
   "techniques": [
     {
+      "techniqueID": "T1562.001",
+      "tactic": "defense-evasion",
+      "score": 1,
+      "color": "",
+      "comment": "",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1190",
+      "tactic": "initial-access",
+      "score": 1,
+      "color": "",
+      "comment": "",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
       "techniqueID": "T1036",
       "tactic": "defense-evasion",
       "score": 1,
@@ -56,8 +78,8 @@
       "showSubtechniques": false
     },
     {
-      "techniqueID": "T1068",
-      "tactic": "privilege-escalation",
+      "techniqueID": "T1566",
+      "tactic": "initial-access",
       "score": 1,
       "color": "",
       "comment": "",
@@ -111,8 +133,8 @@
       "showSubtechniques": false
     },
     {
-      "techniqueID": "T1190",
-      "tactic": "initial-access",
+      "techniqueID": "T1068",
+      "tactic": "privilege-escalation",
       "score": 1,
       "color": "",
       "comment": "",
@@ -135,28 +157,6 @@
     {
       "techniqueID": "T1490",
       "tactic": "impact",
-      "score": 1,
-      "color": "",
-      "comment": "",
-      "enabled": true,
-      "metadata": [],
-      "links": [],
-      "showSubtechniques": false
-    },
-    {
-      "techniqueID": "T1562.001",
-      "tactic": "defense-evasion",
-      "score": 1,
-      "color": "",
-      "comment": "",
-      "enabled": true,
-      "metadata": [],
-      "links": [],
-      "showSubtechniques": false
-    },
-    {
-      "techniqueID": "T1566",
-      "tactic": "initial-access",
       "score": 1,
       "color": "",
       "comment": "",

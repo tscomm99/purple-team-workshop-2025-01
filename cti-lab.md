@@ -50,7 +50,7 @@ According to https://www.attackiq.com/glossary/pyramid-of-pain/
 ## CTI Part 2 - Collection & Analysis
 
 ### How to Approach the Problem
-- How do you go about answering quiestions like "How well are we protected against this threat"?
+- How do you go about answering questions like "How well are we protected against this threat"?
 - What do we have to base our answer on?
 - Where/how can we find this?
 

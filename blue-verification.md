@@ -5,9 +5,9 @@ exercises you will also have much more findings on preventive controls and also 
 controls and emulation actions during planning as well as execution.
 
 But you may still come across some general findings on preventions. So please take a note of them wile you go through the exercise
-so we can discuss them in the findings section at the end of the workshop.
+so we can discuss them at the end of this workshop section.
 
-As for high-level preventive findings you'll probably also have such opservations regarding the detective controls. Please make
+As for high-level preventive findings you'll probably also have such observations regarding the detective controls. Please make
 sure you record them as well for the discussion.
 
 ## Introduction and Preparation
