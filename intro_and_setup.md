@@ -11,11 +11,11 @@
 - Where possible you can split/spread the work among your table mates but we suggest to still work in pairs
 - Please actively participate, share, help, communicate for maximum value and fun :tada:
 
-### Teams Meeting TBD
+### Teams Meeting
 - Open the Teams meeting in your browser using the information provided by the workshop team
 - Mute your mic since we'll be only using it with people in the room
 - If necessary, familiarize yourself how to
-  - Join/leave the breakout room of your table
+  - Join/leave the breakout room or separate meeting of your table
   - Share/unshare your screen
 
 ## Setup
@@ -26,6 +26,7 @@
 
 ### Open the Workshop Repo on Github
 - Please open the URL https://github.com/tscomm99/purple-team-workshop-2025-01
+- Navigate to Introduction and Setup (or open intro_and_setup.md)
 
 ### Internet Connection
 - Who is using his own mobile phone tethering to connect to the Internet?
