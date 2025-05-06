@@ -59,10 +59,15 @@ index=win powershell.exe CommandLine=* ParentImage=*  Image="C:\\Windows\\System
 ```
 This will yield a lot of activity from Ansible as part of provisioning of the lab. But should be relatively rare once a system is in production. You could exclude some terms easily using lookups.
 ```| search NOT "Administrator@attackrange.local"```
+With some additional logging or manual hunting, process structures like [Jobs](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects) can also be a precious indication of something unusual.
+
+:rotating_light:[Spoiler task manager details](images/powershell_spawned_at_step_10.png):rotating_light:
 
 #### Windows logon behavior
 As a process is emitting a login with the SecLogon Login mechanism, a 4624 event gets generated. Not many attributes are seen with two different target accounts 
 ```index=win  4624 TargetUserName!=TargetOutboundUserName TargetOutboundUserName!="-" ```
+
+:rotating_light:[Spoiler: logon event details](images/logon_event_spawned_pth_step10.png):rotating_light:
 
 ### Embrace True Positive Benign and False positives
 Reducing the cost of handling a false positive alert is key to make sure your team doesn't burn out. Each detection should have guidance on how to be triaged to avoid paralysis analysis.
