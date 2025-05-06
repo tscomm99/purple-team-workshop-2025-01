@@ -1,5 +1,4 @@
 # Intro to the Workshop
-- Logistics and schedule
 - It is a full knowledge / whitebox exercise
 - Aim is to demonstrate the workflow of a threat informed purple team exercise from CTI to red to blue to identifying improvements
 - If you have questions or run into problems ask the moderators/facilitators for help
