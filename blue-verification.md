@@ -58,7 +58,7 @@ sure you record them as well for the discussion.
   - Check the name of the detection `....yml` for hints
   - Check the search expression or the URL to the Sigma HQ yml file which is the source of the detection rule
   - Expand the notable line by clicking on `>`
-  - Check the left side `Additional detils`
+  - Check the left side `Additional details`
   - Check the contents of `Original Event` on the right half
   - The data after `<Data Name='CommandLine'>` contains the command line executed
 
