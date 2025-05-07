@@ -98,7 +98,7 @@ Baselining can apply against broad or specific types of events such as kerberos 
 Over time, the amount of noise will decrease, and you will be able to lower thresholds for alerts. 
 
 ### Notable events and correlation
-While sigma can be a great start at quickly covering common use cases, it also suffers from the same constraints as vendor provided detections - most people can only afford to load entire rulesets and hope for the best, then turning off rules which are prone to false positives. The approach we would recommend is not to disable unreliable rules but handle their output differently. In particular, Splunk ES has the concept of "Notables", which are the result of correlation of multiple events of low fidelity with a score. Once a certain score per system is reached, a notable or incident is created. This concept can be recreated with limited effort, focusing on weaker signals to trigger further analysis, or retain context for potential investigations in the future.
+While sigma can be a great start at quickly covering common use cases, it also suffers from the same constraints as vendor provided detections - most people can only afford to load entire rulesets and hope for the best, then turning off rules which are prone to false positives. The approach we would recommend is not to disable unreliable rules but handle their output differently. In particular, Splunk ES has the concept of "Notables", which are the result of correlation of multiple events of low fidelity with a score. Once a certain score per system is reached, a notable or incident is created. This concept can be recreated with limited effort, focusing on weaker signals to trigger further analysis, or retain context for potential investigations in the future. For example, scores can reflect importance:
 - renamed binary = 5 points
 - file written to disk = 5 points
 - sensitive registry read = 10 points
@@ -120,4 +120,18 @@ Later on, try and move up the pyramid based on the behaviors:
  - What users create a service remotely using the Service Control Management API?
 
 ## References
-https://www.youtube.com/watch?v=bVI6WkfY334 - MAD
+[MITRE Attack Detection video about improving analytics - mad20.io](https://www.youtube.com/watch?v=bVI6WkfY334)
+
+[Microsoft Job objects](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects)
+
+[SpecterOps - Introducing the Funnel of Fidelity - 2019](https://posts.specterops.io/introducing-the-funnel-of-fidelity-b1bb59b04036)
+
+[LOLBAS Project](https://lolbas-project.github.io/)
+
+[GTFOBins](https://gtfobins.github.io/)
+
+[MITRE Common Weakness Enumerations](https://cwe.mitre.org/)
+
+[RCEdit](https://github.com/electron/rcedit/releases)
+
+[Microsoft - PE Version information resources](https://learn.microsoft.com/en-us/windows/win32/menurc/versioninfo-resource)
