@@ -26,6 +26,7 @@ sure you record them as well for the discussion.
   - This will be the place to track and document your verification as well as record any high-level findings you may have
 
 ## Splunk Preparation and Hints
+- First, a little refresher on Splunk :snowflake: :snowflake: :snowflake:
 - To do the verification in the Splunk web UI
   - Log in
   - Navigate to `Apps` > `Enterprise Security` > `Incident Review`
