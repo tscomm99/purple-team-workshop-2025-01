@@ -1,4 +1,5 @@
 # Detection analysis
+In this section, we'll review opportunities in the workshop and approaches in general to improve the effectiveness of our detection apparatus. 
 
 ## What is under attacker control
 The threat actor chose to use LOLBIN as part of their tooling. The TTPs vary in terms of complexity (additional stealth) and associated detection opportunities (behavior vs signature).
@@ -69,13 +70,13 @@ As a process is emitting a login with the SecLogon Login mechanism, a 4624 event
 
 :rotating_light:[Spoiler: logon event details](images/logon_event_spawned_pth_step10.png):rotating_light:
 
-### Embrace True Positive Benign and False positives
+## Embrace True Positive Benign and False positives
 Reducing the cost of handling a false positive alert is key to make sure your team doesn't burn out. Each detection should have guidance on how to be triaged to avoid paralysis analysis.
 
 According to statistics definition, _Precision_ measures the accuracy of positive predictions, while _recall_ measures the ability of the model to find all relevant instances. 
 In our case, this means that we need to find the balance between detections that may be too specific and occur false negatives, and detections that may be too broad and cause attrition issues. 
 
-`False Positives will happen and should not be seen as a big deal.`
+:rotating_light: False Positives will happen and should not be seen as a big deal :rotating_light:
 
 The triage differenciation is the hard work you need to perform, luckily only once, as you establish the detection. It is where correlation kicks in, as it is often required to run multiple queries in parallel - ideally as a "playbook" - when reviewing events with low fidelity, effectively treating them as triggers rather than a final product. A single event should not be enough to create an incident, but a series of small signals should.
 
@@ -108,8 +109,8 @@ An approach for building correlation rules on the cheap can be found in [our exa
 We've demonstrated a couple example of detection opportunities and approaches which were not provided as part of common detection rulesets, as they rely on anomalies and have a low "Precision". Building a handful of detections with high "Recall" can help as searching data is often relatively cheap, depending on the technologies available to you. As such, consider many broader potentially overlapping detections, acting as failover for rules which may be too specific. In our workshop, a simple example approach would be to looking for hacking tool strings and names. As a rule, treat  false positives as happy little accidents, treating them as triggers for enrichments, rather than a final product. To complement or compensate for faulty detections for complicated scenarios, you will maybe need to turn to canaries and other early warning systems. 
 Always assume that bypasses of your detections are possible and establish regular testing scenarios.
 
-## Practice
-As a challenge, try to determine who is using PSEXEC in your environment, if any, and why.
+## Now, practice
+If you're up for a challenge, try to determine who is using PSEXEC in your environment, if any, and why.
  - is it to run code as system?
  - is it to run code on a remote system?
  - Can you easily detect usage of the legitimate, original PSExec binaries?
