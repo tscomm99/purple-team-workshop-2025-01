@@ -20,7 +20,7 @@ sure you record them as well for the discussion.
   - Open the [emulation reference](resources/emulation-reference.md)
 - Prepare the documentation for the verification
   - Navigate to your table's subdirectory on [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
-  - Create an new text document
+  - Create a new text document
   - Copy the visible contents (not the raw markdown) of the [emulation reference](resources/emulation-reference.md) and paste them into the new text document
   - You can copy all parts into one document or create one document per emulation part
   - This will be the place to track and document your verification as well as record any high-level findings you may have
@@ -45,7 +45,7 @@ sure you record them as well for the discussion.
 - Get a list of all relevant Splunk detections
   - Go to `Apps` > `Enterprise Security` then select `Configure` > `Content` > `Content Management`
   - Filter on `.yml`
-- Open an saved search from the notables table in `Incident Review`
+- Open a saved search from the notables table in `Incident Review`
   - Expand the notable by clicking on the `>` icon in the column `i`
   - In the right half under `Correlation Search` click the link `Threat - ...yml - Rule` (opens in a new tab automatically)
 - Perform a manual search
