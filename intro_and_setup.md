@@ -39,6 +39,7 @@
 - Open the link to [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
 - Log in if you are not already
 - Navigate to the sub folder of your table
+- You will be using the material in the share throughout the workshop so please keep it open
 
 ### Access Guacamole
 - Open the link to Guacamole and log in using the information provided by the workshop team
@@ -65,7 +66,7 @@
 ### Access Splunk
 - Open the link to Splunk and log in using the information provided by the workshop team
 - Splunk can be used by all participants concurrently
-- You will be using the material in the drive throughout the workshop so please keep it open
+- You will be using Splunk troughout the workshop so keep it open
 
 ### Detailed Intro from each Workshop Track
 - CTI
