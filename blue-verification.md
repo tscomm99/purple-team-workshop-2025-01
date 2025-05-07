@@ -84,20 +84,17 @@ sure you record them as well for the discussion.
 ### Workflow to Verify Detections
 - In Splunk `Incident Review` go through the notables one by one
 - Record your findings from the questions below in the verification sheet you created
-- Take a note of the techniques the detection triggering the notable contains
+- Take a note of the techniques listed in the detection triggering the notable
   - Either expand the notable line or
   - If enabled - note them from the column `Annotations`
-- Check if/where you can find  the referenced techniques in the verification sheet you prepared based on the emulation reference
-  - Is it mapped to the correct emulation step?
-  - Were all the emulation steps mapped to the technique detected?
-  - Do the techniques of the emulation match with those of the detection?
+- Check if/where you can find the referenced techniques in the verification sheet you prepared based on the emulation reference
+  - Which emulation step with a matching technique corresponds to the actual step executed according to the matched string and/or the sequence of execution
+  - Do the techniques of the emulation match with those listed the detection?
 - If the detection technique does not match any technique of the emulation
   - Search the emulation reference for keywords from the detection (refer to the description and the search expression for details)
 - If an emulation step was not detected after processing all the notables
-  - Search the [detection reference](resources/detection-reference.md) for keywords of the emulation step, the techniques specicied or review the .yml files for possible searches that did not trigger
+  - Search the [detection reference](resources/detection-reference.md) for keywords characteristic of the emulation step, the techniques specified or review the .yml files for possible searches that did not trigger
   - Search Splunk for the performed emulation action e.g. `index=win whoami` to understand if and what data you get from the victim endpoints
-- Bonus task if you finish early
-  - Review the Splunk searches and the references and get an opinion how "good" the detection is
 
 ### Possible Analysis Results :rotating_light: Spoiler Alert! :rotating_light:
 
