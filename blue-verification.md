@@ -98,6 +98,7 @@ sure you record them as well for the discussion.
 - If an emulation step was not detected after processing all the notables
   - Search the [detection reference](resources/detection-reference.md) for keywords characteristic of the emulation step, the techniques specified or review the .yml files for possible searches that did not trigger
   - Search Splunk for the performed emulation action e.g. `index=win whoami` to understand if and what data you get from the victim endpoints
+  - Have a look at the [detection engineering section](detection_engineering.md) for more insights
 
 ### Possible Analysis Results :rotating_light: Spoiler Alert! :rotating_light:
 
