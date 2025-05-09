@@ -16,7 +16,7 @@ According to https://www.attackiq.com/glossary/pyramid-of-pain/
 - [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)
 - How to search and navigate
   - Enhance Google search using `site:attack.mitre.org`or just `att&ck`
-  - [ATT&CK Powered Suit](https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/attack-powered-suit/)
+  - [ATT&CK Powered Suit](https://ctid.mitre.org/projects/attack-powered-suit/)
   - Search in ATT&CK Navigator
 - Our use cases for ATT&CK
   - Navigator layers for graphical analysis (coverage, attack flow)
