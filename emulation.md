@@ -84,9 +84,9 @@ ATT&CK Techniques: `?`
 We see that we have admin privileges on this system, let's disable some security tools to make our life simpler...
 
 > [!IMPORTANT]
-> Re-open PowerShell as Administrator and let's disable a bunch of useful things in Windows Defender.
+> Re-open PowerShell as Administrator
 
-We can turn off realtime monitoring (which includes antivirus), behavior monitoring, script scanning, and blocking at first sight.
+Now let's disable a bunch of useful things in Windows Defender. We can turn off realtime monitoring (which includes antivirus), behavior monitoring, script scanning, and blocking at first sight.
 
 **Step 7**
 ```PowerShell
