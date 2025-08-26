@@ -53,7 +53,7 @@ sure you record them as well for the discussion.
   - Set the desired time frame by clicking on the pop-up menu labeled `Last 24 hours`
   - Enter a search expression
   - Hint: As a good practice you should always narrow the amount of data you want to search, for our workshop preceed each search with `index=win` unless there is `source=` at the beginning of the search
-  - Hint: If you want to understand why a detection did not match it my be helpful to make the corresponding search expression more generic to find out if there is any of the expected data present
+  - Hint: If you want to understand why a detection did not match it may be helpful to make the corresponding search expression more generic to find out if there is any of the expected data present
 - If you have multiple detections or multiple emulation steps with the same technique in the notables table
   - Check the name of the detection `....yml` for hints
   - Check the search expression or the URL to the Sigma HQ yml file which is the source of the detection rule
