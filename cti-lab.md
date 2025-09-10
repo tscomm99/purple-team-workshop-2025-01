@@ -76,7 +76,7 @@ According to https://www.attackiq.com/glossary/pyramid-of-pain/
     - If available use existing coverage/posture data e.g. as ATT&CK Navigator layers (skipped here since we'll do it after emulation once)
   - Produce clear and relevant results (also in the context of continuous improvement)
 - Create the final cumulated [ATT&CK layer](resources/cti/red/cumulated_black_basta_ttps.json)
-- Add the final CTI data to the [adversary profile](resources/AdversaryProfile.pdf)
+- Add the final CTI data to the [adversary profile](resources/Adversary_Profile.pdf)
 - Add criteria to high-level purple team exercise goals
 
 ### Analyse TTPs to Produce the Emulation Plan

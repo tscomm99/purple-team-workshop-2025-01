@@ -102,8 +102,7 @@ sure you record them as well for the discussion.
 
 ### Possible Analysis Results :rotating_light: Spoiler Alert! :rotating_light:
 
-- After analysing part 1 you could have these [findings](resources/Blue_Analysis_Part_1.pdf)
-- After analysing part 2 you could have these [findings](resources/Blue_Analysis_Part_2.pdf)
+- After analysing you could have these [findings](resources/Detection_Verification_Completed.pdf)
 
 ## Analysis Summary :rotating_light: Spoiler Alert! :rotating_light:
 - Detections that are [configured vs. that triggered](resources/cti/purple/configured_vs_triggered.json)
