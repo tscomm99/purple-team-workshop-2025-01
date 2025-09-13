@@ -65,29 +65,30 @@ In case your emulation did not go well you can consult the PDFs below but you wi
 
 ## Procedure for Analysing Emulation Part 1&2
 
-  To conduct the verification look at the emulation flow and try to match each step performed to a Splunk notable.
-
-- To perform this task you will be comparing the emulation actions performed to the detection posture
   - First you will look at all the actions that got detected by going through the Splunk notables and mapping them to the emulation
   - Second you will be going through the undetected emulation steps and check if there is no detection in place or if it did not trigger
   - As bonus task you can try to find out why it did not trigger and how good the detection quality is for those that triggered
-  - Note: don't get confused if the sequence of the notables is not 100% aligned with the emulation, Splunk is configured to run all detections searches in batches every 5'
-  - Check if you find a notable/triggered detection that matches the host, time and action performed by adversary
-  - If not make a open search for a good identifying sting of the emulation step
-      - If you get no search results - no luck
-      - If you get search results
-          - check if you got a detection that did not get triggered and take a note
-              - Search for a significant term e.g. quser.exe in the Splunk ES configuration > content management
-                  - Test the detection by copying the search expression into the manual search
-  - If you got a detection/notable verify if the ATT&CK Techniques match (this is important to make the ATT&CK gap analysis)
-      - If not take a note
-  - Bonus (provide good example steps)
-      - Check if you can find a detection for an undetected step in the SIGMA repo
-      - Check if you can find out why the detection in place did not trigger
-          - Check the syntax of the detection and compare it to the data
 
-### Collect and Document Findings of Red Team Steps Execution
-  - Were there any?
+To conduct the verification look at the emulation flow and try to match each step performed to a Splunk notable. Write down all your observations in the Google document we prepared for you.
+
+Note: Don't get confused if the sequence of the Splunk detections/notables is not 100% aligned with the emulation, Splunk is configured to run all detections searches in batches every 5'
+
+To perform this task go through each emulation step chronologically and do the following:
+
+- Check if you find a notable/triggered detection that matches the host, time and action performed in the emulation
+  - If so, write down the detection rules/searches that triggered and
+    - Which ATT&CK technique ID does the detection list, note the ones that do not match with the ones listed in the emulation (this is important to make the ATT&CK gap analysis)
+  - If not perform an open search for a/some good identifying string/s (e.g. quser) of the emulation step
+    - If you get no search results - no luck
+    - If you get search results
+        - check if we have a detection that did not get triggered and take a note
+            - Search for a significant term e.g. quser.exe in the Splunk ES configuration > content management
+            - Test the detection by copying the search expression into the manual search
+        - if we have no failed detection note what could be used in the data we collected in Splunk
+- Bonus (TBD provide good example steps)
+    - Check if you can find a detection for an undetected step in the SIGMA repo
+    - Check if you can find out why the detection in place did not trigger
+        - Check the syntax of the detection and compare it to the data
 
 ### Possible Findings of this Verification
 
@@ -95,25 +96,6 @@ In case your emulation did not go well you can consult the PDFs below but you wi
 - Technique with a detection that did not trigger (incorrect detection search, required data not created/forwarded/indexed correctly)
 - Misalignment of detection and emulation technique selection
 - Detection which did not detect all executed procedures or other detection quality issues
-
-### Workflow to Verify Detections
-- In Splunk `Incident Review` go through the notables one by one
-- Record your findings from the questions below in the verification sheet you created
-- Take a note of the techniques listed in the detection triggering the notable
-  - Either expand the notable line or
-  - If enabled - note them from the column `Annotations`
-  #### Identify the Detected Emulation Steps
-- Check if/where you can find the referenced techniques in the verification sheet you prepared based on the emulation reference
-  - Which emulation step with a matching technique corresponds to the actual step executed according to the matched string and/or the sequence of execution
-  - Do the techniques of the emulation match with those listed the detection?
-  #### Identify Detected Techniques not mapped to Emulation Steps
-- If the detection technique does not match any technique of the emulation
-  - Search the emulation reference for keywords from the detection (refer to the description and the search expression for details)
-  #### Emulation Steps not Detected and why
-- If an emulation step was not detected after processing all the notables
-  - Search the [detection reference](resources/detection-reference.md) for keywords characteristic of the emulation step, the techniques specified or review the .yml files for possible searches that did not trigger
-  - Search Splunk for the performed emulation action e.g. `index=win whoami` to understand if and what data you get from the victim endpoints
-  - Have a look at the [detection engineering section](detection_engineering.md) for more insights
 
 ### Possible Analysis Results :rotating_light: Spoiler Alert! :rotating_light:
 
