@@ -65,13 +65,9 @@ In case your emulation did not go well you can consult the PDFs below but you wi
 
 ## Procedure for Analysing Emulation Part 1&2
 
-  - First you will look at all the actions that got detected by going through the Splunk notables and mapping them to the emulation
-  - Second you will be going through the undetected emulation steps and check if there is no detection in place or if it did not trigger
-  - As bonus task you can try to find out why it did not trigger and how good the detection quality is for those that triggered
-
 To conduct the verification look at the emulation flow and try to match each step performed to a Splunk notable. Write down all your observations in the Google document we prepared for you.
 
-Note: Don't get confused if the sequence of the Splunk detections/notables is not 100% aligned with the emulation, Splunk is configured to run all detections searches in batches every 5'
+**Note**: Don't get confused if the sequence of the Splunk detections/notables is not 100% aligned with the emulation, Splunk is configured to run all detections searches in batches every 5'
 
 To perform this task go through each emulation step chronologically and do the following:
 
@@ -79,7 +75,7 @@ To perform this task go through each emulation step chronologically and do the f
   - If so, write down the detection rules/searches that triggered and
     - Which ATT&CK technique ID does the detection list, note the ones that do not match with the ones listed in the emulation (this is important to make the ATT&CK gap analysis)
   - If not perform an open search for a/some good identifying string/s (e.g. quser) of the emulation step
-    - If you get no search results - no luck
+    - If you get no search results - no luck :sob: to fix this you need to collect additional data or even add/improve tooling to monitor it
     - If you get search results
         - check if we have a detection that did not get triggered and take a note
             - Search for a significant term e.g. quser.exe in the Splunk ES configuration > content management
