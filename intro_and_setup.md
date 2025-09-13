@@ -32,11 +32,11 @@
 ### Internet Connection
 - Who is using his own mobile phone tethering to connect to the Internet?
   - Please copy your IP from https://www.whatsmyip.org
-  - And fill it along with your (first) name in the corresponding field in this [Google sheet](https://docs.google.com/spreadsheets/d/19Qvg4-iVPGrZ5CDWJv2WlZH05fmtjPEwtrhv6maUOro/edit?usp=drive_link)
+  - And fill it along with your (first) name in the corresponding field in this [Google sheet](https://docs.google.com/spreadsheets/d/15LgJh1XdqQX-9BGRK4M67IqqKdRuiUQn/edit?usp=share_link&ouid=108745218984106173786&rtpof=true&sd=true)
 - If you are connecting via the guest WLAN please connect now, the details can be found on the table info page
 
 ### Access Workshop Google Share
-- Open the link to [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
+- Open the link to [Google Drive](https://drive.google.com/drive/folders/1vgt2CnNr_iRbZpUD5jNu2JX2WpRNgITr?usp=sharing)
 - Log in if you are not already
 - Navigate to the sub folder of your table
 - You will be using the material in the share throughout the workshop so please keep it open

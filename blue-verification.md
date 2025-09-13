@@ -4,28 +4,22 @@ In our workshop we're focusing on the detection side since our preventive postur
 exercises you will also have much more findings on preventive controls and also much more interaction between preventive
 controls and emulation actions during planning as well as execution.
 
-But you may still come across some general findings on preventions. So please take a note of them wile you go through the exercise
+But you may still come across some general findings on preventions. So please take a note of them while you go through the exercise
 so we can discuss them at the end of this workshop section.
 
 As for high-level preventive findings you'll probably also have such observations regarding the detective controls. Please make
 sure you record them as well for the discussion.
 
 ## Introduction and Preparation
-- To perform this task you will be comparing the emulation actions performed to the detection posture
-  - First you will look at all the actions that got detected by going through the Splunk notables and mapping them to the emulation
-  - Second you will be going through the undetected emulation steps and check if there is no detection in place or if it did not trigger
-  - As bonus task you can try to find out why it did not trigger and how good the detection quality is for those that triggered
 - Open the necesssary reference material
   - Open the [detection reference](resources/detection-reference.md)
   - Open the [emulation reference](resources/emulation-reference.md)
 - Prepare the documentation for the verification
-  - Navigate to your table's subdirectory on [Google Drive](https://drive.google.com/drive/folders/1buR-qCIkuns5KoQstblG_4lHHnHhCTZn?usp=sharing)
-  - Create a new text document
-  - Copy the visible contents (not the raw markdown) of the [emulation reference](resources/emulation-reference.md) and paste them into the new text document
-  - You can copy all parts into one document or create one document per emulation part
+  - Navigate to your table's subdirectory on [Google Drive](https://drive.google.com/drive/folders/1vgt2CnNr_iRbZpUD5jNu2JX2WpRNgITr?usp=sharing)
+  - Open the detection verfication document we prepared for you
   - This will be the place to track and document your verification as well as record any high-level findings you may have
 
-## Splunk Preparation and Hints
+### Splunk Preparation and Hints
 - First, a little refresher on Splunk :snowflake: :snowflake: :snowflake:
 - To do the verification in the Splunk web UI
   - Log in
@@ -62,14 +56,35 @@ sure you record them as well for the discussion.
   - Check the contents of `Original Event` on the right half
   - The data after `<Data Name='CommandLine'>` contains the command line executed
 
-
-
-## Procedure for Analysing Emulation Part 1&2
-
 ### Notables from the Emulation
+
+In case your emulation did not go well you can consult the PDFs below but you will not be able to drill down into the details of the detection match.
 
 - After emulation part 1 you should have these new [notables](resources/Incident_Review_Part_1_Splunk.pdf)
 - After emulation part 2 you should have these new [notables](resources/Incident_Review_Part_2_Splunk.pdf)
+
+## Procedure for Analysing Emulation Part 1&2
+
+  To conduct the verification look at the emulation flow and try to match each step performed to a Splunk notable.
+
+- To perform this task you will be comparing the emulation actions performed to the detection posture
+  - First you will look at all the actions that got detected by going through the Splunk notables and mapping them to the emulation
+  - Second you will be going through the undetected emulation steps and check if there is no detection in place or if it did not trigger
+  - As bonus task you can try to find out why it did not trigger and how good the detection quality is for those that triggered
+  - Note: don't get confused if the sequence of the notables is not 100% aligned with the emulation, Splunk is configured to run all detections searches in batches every 5'
+  - Check if you find a notable/triggered detection that matches the host, time and action performed by adversary
+  - If not make a open search for a good identifying sting of the emulation step
+      - If you get no search results - no luck
+      - If you get search results
+          - check if you got a detection that did not get triggered and take a note
+              - Search for a significant term e.g. quser.exe in the Splunk ES configuration > content management
+                  - Test the detection by copying the search expression into the manual search
+  - If you got a detection/notable verify if the ATT&CK Techniques match (this is important to make the ATT&CK gap analysis)
+      - If not take a note
+  - Bonus (provide good example steps)
+      - Check if you can find a detection for an undetected step in the SIGMA repo
+      - Check if you can find out why the detection in place did not trigger
+          - Check the syntax of the detection and compare it to the data
 
 ### Collect and Document Findings of Red Team Steps Execution
   - Were there any?
