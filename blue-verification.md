@@ -97,8 +97,8 @@ To perform this task go through each emulation step chronologically and do the f
 
 - After analysing you could have these [findings](resources/Detection_Verification_Completed.pdf)
 
-## Analysis Summary :rotating_light: Spoiler Alert! :rotating_light:
-- Detections that are [configured vs. that triggered](resources/cti/purple/configured_vs_triggered.json)
+## Analysis Summary
+- Detections that are [configured vs. that triggered](resources/cti/purple/configured_vs_triggered.json) or open directly in [Navigator] https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2Ftscomm99%2Fpurple-team-workshop-2025-01%2Frefs%2Fheads%2Fmain%2Fresources%2Fcti%2Fpurple%2Fconfigured_vs_triggered.json
 - Detections that [triggered and are used by Black Basta](resources/cti/purple/black_basta_detection_coverage.json)
 
 ## More Ways to Leverage ATT&CK
