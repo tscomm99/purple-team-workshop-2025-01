@@ -74,7 +74,7 @@ To perform this task go through each emulation step chronologically and do the f
 - Check if you find a notable/triggered detection that matches the host, time and action performed in the emulation
   - If so, write down the detection rules/searches that triggered and
     - Which ATT&CK technique ID does the detection list, note the ones that do not match with the ones listed in the emulation (this is important to make the ATT&CK gap analysis)
-  - If not perform an open search for a/some good identifying string/s (e.g. quser) of the emulation step
+  - If not, perform an open search for a/some good identifying string/s (e.g. quser) of the emulation step
     - If you get no search results - no luck :sob: to fix this you need to collect additional data or even add/improve tooling to monitor it
     - If you get search results
         - check if we have a detection that did not get triggered and take a note
