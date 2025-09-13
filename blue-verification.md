@@ -63,7 +63,7 @@ In case your emulation did not go well you can consult the PDFs below but you wi
 - After emulation part 1 you should have these new [notables](resources/Incident_Review_Part_1_Splunk.pdf)
 - After emulation part 2 you should have these new [notables](resources/Incident_Review_Part_2_Splunk.pdf)
 
-## Procedure for Analysing Emulation Part 1&2
+## Procedure for Analysing Emulation
 
 To conduct the verification look at the emulation flow and try to match each step performed to a Splunk notable. Write down all your observations in the Google document we prepared for you.
 
