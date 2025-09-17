@@ -211,16 +211,9 @@ ATT&CK Techniques: `T1048`
 
 ### Import AD dump into Bloodhound and find path to Domain Admins
 
-Before starting Bloodhound, make sure that Bloodhound is installed and Neo4j is running
+Now you will need to go to `http://localhost:8080` in your browser, login as `admin` user with your attack range password.
 
-```bash
-[KALI:bash] sudo apt install -y bloodhound
-[KALI:bash] sudo neo4j start
-```
-
-Now you will need to go to `http://localhost:7474` in your browser, login as `neo4j` user with `neo4j` password and set the new password, for example good old `P@ssw0rd`.
-
-Let us now open Bloodhound (use the newly-set `neo4j` credentials to connect to the database) and import the ZIP file into it.
+After logging into Bloodhound, go to Administration section and File Ingest and import the ZIP file into it.
 
 We mark our AD user as compromised and then we find a path from the compromised principal to Domain Admins
 
