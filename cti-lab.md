@@ -24,7 +24,7 @@ According to https://www.attackiq.com/glossary/pyramid-of-pain/
 
 ### SIGMA
 
-The main SIGMA rule repo is on (github)[https://github.com/SigmaHQ/sigma/tree/master]
+The main SIGMA rule repo is on [github](https://github.com/SigmaHQ/sigma/tree/master)
 
 ![images/Sigma.jpg](images/Sigma.jpg "Sigma Flow")
 
