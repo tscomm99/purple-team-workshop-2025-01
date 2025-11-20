@@ -69,7 +69,7 @@ The main [SIGMA rule repo](https://github.com/SigmaHQ/sigma/tree/master) can be 
 - Extract TTPs incl. necessary details/context
 - Create an [adversary profile](resources/adversaryprofile-template.md) to document the actor and the CTI/blue/red "table top"
 - Compile different [ATT&CK Navigator layers](resources/cti/red)
-- Note: Depending on the goals of the exercise (e.g. emulate several different C2 channels) a diffenrent form of documentation may be chosen
+- Note: Depending on the goals of the exercise (e.g. emulate several different C2 channels) a different form of documentation may be chosen
 
 ### Analyse and Define what to Cover
 
