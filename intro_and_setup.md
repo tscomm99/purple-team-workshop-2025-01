@@ -10,8 +10,8 @@
 - Where possible you can split/spread the work among your table mates but we suggest to still work in pairs
 - Please actively participate, share, help, communicate for maximum value and fun :tada:
 
-### Teams Meeting
-- Open the Teams meeting in your browser using the information provided by the workshop team
+### Online Meeting
+- Open the online meeting in your browser using the information provided by the workshop team
 - Mute your mic since we'll be only using it with people in the room
 - If necessary, familiarize yourself how to
   - Join/leave the breakout room or separate meeting of your table
