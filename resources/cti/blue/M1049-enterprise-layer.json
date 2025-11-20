@@ -2,7 +2,7 @@
   "description": "Enterprise techniques mitigated by Antivirus/Antimalware, ATT&CK mitigation M1049 (v1.1)",
   "name": "Antivirus/Antimalware (M1049)",
   "domain": "enterprise-attack",
-  "versions": { "layer": "4.5", "attack": "17", "navigator": "4.8.1" },
+  "versions": { "layer": "4.5", "attack": "18", "navigator": "5.2.0" },
   "techniques": [
     { "techniqueID": "T1547", "showSubtechniques": true },
     {

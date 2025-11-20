@@ -1,10 +1,6 @@
 {
   "name": "PsExec (S0029)",
-  "versions": {
-    "attack": "17",
-    "navigator": "5.1.0",
-    "layer": "4.5"
-  },
+  "versions": { "layer": "4.5", "attack": "18", "navigator": "5.2.0" },
   "domain": "enterprise-attack",
   "description": "Enterprise techniques used by PsExec, ATT&CK software S0029 (v1.6)",
   "filters": {

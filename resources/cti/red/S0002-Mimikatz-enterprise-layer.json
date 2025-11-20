@@ -2,7 +2,7 @@
   "description": "Enterprise techniques used by Mimikatz, ATT&CK software S0002 (v1.9)",
   "name": "Mimikatz (S0002)",
   "domain": "enterprise-attack",
-  "versions": { "layer": "4.5", "attack": "17", "navigator": "4.8.1" },
+  "versions": { "layer": "4.5", "attack": "18", "navigator": "5.2.0" },
   "techniques": [
     { "techniqueID": "T1134", "showSubtechniques": true },
     {

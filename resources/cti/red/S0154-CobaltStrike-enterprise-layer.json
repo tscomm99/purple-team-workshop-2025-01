@@ -2,7 +2,7 @@
   "description": "Enterprise techniques used by Cobalt Strike, ATT&CK software S0154 (v1.13)",
   "name": "Cobalt Strike (S0154)",
   "domain": "enterprise-attack",
-  "versions": { "layer": "4.5", "attack": "17", "navigator": "4.8.1" },
+  "versions": { "layer": "4.5", "attack": "18", "navigator": "5.2.0" },
   "techniques": [
     { "techniqueID": "T1548", "showSubtechniques": true },
     {

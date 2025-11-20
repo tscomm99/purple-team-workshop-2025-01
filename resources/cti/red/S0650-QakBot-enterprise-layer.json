@@ -2,7 +2,7 @@
   "description": "Enterprise techniques used by QakBot, ATT&CK software S0650 (v1.3)",
   "name": "QakBot (S0650)",
   "domain": "enterprise-attack",
-  "versions": { "layer": "4.5", "attack": "17", "navigator": "4.8.1" },
+  "versions": { "layer": "4.5", "attack": "18", "navigator": "5.2.0" },
   "techniques": [
     { "techniqueID": "T1071", "showSubtechniques": true },
     {
